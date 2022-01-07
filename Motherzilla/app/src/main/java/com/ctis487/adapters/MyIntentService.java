@@ -33,11 +33,6 @@ public class MyIntentService extends IntentService {
 
     }
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-
-    }
 
     private String loadFileFromAssets(String fileName) {
 

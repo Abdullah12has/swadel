@@ -5,7 +5,7 @@
     android:id="@+id/mainActivityLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg3">
+    android:background="@drawable/bg1">
 
 
     <androidx.appcompat.widget.AppCompatButton
@@ -90,7 +90,7 @@
         android:layout_marginBottom="22dp"
         android:text='"And when you want something, all the universe conspires in helping you to achieve it"'
         android:textAlignment="center"
-        android:textColor="#FBFBFB"
+        android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@+id/tvauthor"
@@ -106,7 +106,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="73dp"
         android:layout_marginBottom="61dp"
-        android:text="-Author"
+        android:text="— Paulo Coelho, The Alchemist"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/explore_btn"
