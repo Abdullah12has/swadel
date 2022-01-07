@@ -13,15 +13,19 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 
 import com.ctis487.adapters.Commons;
 import com.ctis487.adapters.Quotes;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.ListenerRegistration;
+import com.google.rpc.Help;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -59,8 +63,28 @@ private String jsonStr;
 
         setContentView(R.layout.home_activity);
 
-        mAuth = FirebaseAuth.getInstance();
 
+
+        BottomNavigationView navigationView = findViewById(R.id.bottom_navigation);
+        navigationView.setSelectedItemId(R.id.page_5);
+
+
+        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch(item.getItemId()){
+                    case R.id.page_1:
+                        startActivity(new Intent(getApplicationContext(), HelpActivity.class));
+
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+
+        });
+
+        mAuth = FirebaseAuth.getInstance();
 
         mAuthListener = new FirebaseAuth.AuthStateListener(){
             @Override
@@ -76,7 +100,6 @@ private String jsonStr;
         };
 
 
-
     }
 
 
@@ -85,7 +108,6 @@ private String jsonStr;
 //        Toast.makeText(MainActivity.this, "Logged out ", Toast.LENGTH_SHORT).show();
         startActivity(new Intent(MainActivity.this, LoginActivity.class));
     }
-
 
     @Override
     protected void onStart() {
@@ -105,22 +127,18 @@ private String jsonStr;
         super.onStop();
         if (mAuthListener != null) {
             mAuth.removeAuthStateListener(mAuthListener);
-
         }
     }
 
-
-
 //    Getting data from json
-
     public void showw(View view) {
-
         // Reading the JSON file from the assets folder and storing it in a String
         jsonStr = loadFileFromAssets("quotes.json");
         Log.d("TAG", "\n" + jsonStr);
         // Call to AsyncTask
         new GetQuotesJSON().execute();
     }
+// controlling the nav
 
 
     private class GetQuotesJSON extends AsyncTask<Void, Void, Void> {
