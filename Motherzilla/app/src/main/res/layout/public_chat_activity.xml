@@ -32,8 +32,8 @@
 
     <ImageButton
         android:id="@+id/attachButton"
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginStart="7dp"
         android:layout_marginTop="548dp"
         android:layout_marginEnd="10dp"
@@ -41,17 +41,17 @@
         android:background="@drawable/rounded_text_field_chat"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.411"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.888"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ic_attach_file_black_24dp"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
         android:layout_width="317dp"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:layout_marginStart="47dp"
         android:layout_marginTop="540dp"
         android:layout_marginEnd="47dp"
@@ -74,8 +74,8 @@
 
     <ImageButton
         android:id="@+id/emojiButton"
-        android:layout_width="35dp"
-        android:layout_height="40dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="550dp"
         android:layout_marginEnd="12dp"
@@ -83,11 +83,11 @@
         android:background="@drawable/rounded_text_field_chat"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.263"
         app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ic_insert_emoticon_black_24dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

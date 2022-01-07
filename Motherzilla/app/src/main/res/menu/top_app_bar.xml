@@ -4,11 +4,12 @@
 
     <item
         android:id="@+id/logo"
-        android:title="profile"
-        app:showAsAction="ifRoom"
         android:contentDescription="profile"
-        android:icon="@drawable/ic_profile"
-        />
+        android:icon="?android:attr/fingerprintAuthDrawable"
+        android:iconTint="#D52828"
+        android:onClick="logOut"
+        android:title="profile"
+        app:showAsAction="ifRoom" />
 
 
 
