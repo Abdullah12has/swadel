@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TopFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#DCEBCB"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/frgTopEtName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName" />
+
+        <Spinner
+            android:id="@+id/frgTopSpinnerCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/cities" />
+
+        <Button
+            android:id="@+id/frgTopBtnOk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@android:string/ok" />
+    </LinearLayout>
+
+</FrameLayout>

@@ -90,10 +90,14 @@ private String jsonStr;
 
                         overridePendingTransition(0,0);
                         return true;
+                    case R.id.page_3:
+                        startActivity(new Intent(getApplicationContext(), HomeworkHelpActivity.class));
+
+                        overridePendingTransition(0,0);
+                        return true;
                 }
                 return false;
             }
-
         });
 
         mAuth = FirebaseAuth.getInstance();

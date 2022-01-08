@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Motherzilla">
         <activity
+            android:name=".HomeworkHelpActivity"
+            android:exported="false" />
+        <activity
             android:name=".HelpActivity"
             android:exported="false" />
         <activity
