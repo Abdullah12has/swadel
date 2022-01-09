@@ -25,6 +25,9 @@ public class MentalHealthActivityAdapter extends RecyclerView.Adapter<MentalHeal
         this.dataholder = dataholder;
     }
 
+
+
+
     @NonNull
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -49,8 +52,11 @@ public class MentalHealthActivityAdapter extends RecyclerView.Adapter<MentalHeal
 
     }
 
+
     @Override
     public int getItemCount() {
+
+
         return  dataholder.size();
     }
 

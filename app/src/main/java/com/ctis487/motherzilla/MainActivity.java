@@ -33,8 +33,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -45,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
-    DatabaseHelper databaseHelper;
+    DatabaseHelper dbHelper;
 
 
 // the json part
@@ -106,7 +110,42 @@ private String jsonStr;
             }
         };
 
+        //Copy database from the assets/ folder to the data/data/databases/ folder. İf ıt exist, there is no need to copy it
+        try {
+            String fileToDatabase = "/data/data/" + getPackageName() + "/databases/"+DatabaseHelper.DATABASE_NAME;
+            File file = new File(fileToDatabase);
+            File pathToDatabasesFolder = new File("/data/data/" + getPackageName() + "/databases/");
+            if (!file.exists()) {
+                pathToDatabasesFolder.mkdirs();
+                Log.d("BURDA", "BURDA");
+                CopyDB( getResources().getAssets().open(DatabaseHelper.DATABASE_NAME),
+                        new FileOutputStream(fileToDatabase));
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //Create DatabaseHelper object after try catch statement
+        dbHelper = new DatabaseHelper(this);
 
+
+
+    }
+
+    public void CopyDB(InputStream inputStream, OutputStream outputStream) throws IOException {
+        // Copy 1K bytes at a time
+        byte[] buffer = new byte[1024];
+        int length;
+        Log.d("BURDA", "BURDA2");
+
+        while ((length = inputStream.read(buffer)) > 0) {
+            outputStream.write(buffer, 0, length);
+            Log.d("BURDA", "BURDA3");
+
+        }
+        inputStream.close();
+        outputStream.close();
     }
 
 

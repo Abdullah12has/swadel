@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.WindowManager;
 
@@ -42,11 +43,16 @@ public class MentalHealthActivity extends AppCompatActivity {
         Cursor cursor = new DatabaseHelper(this).readAllData();
 
 
+
         while(cursor.moveToNext()){
-            MentalHealthItems obj = new MentalHealthItems(cursor.getInt(1), cursor.getInt(2), cursor.getString(2), cursor.getString(4), cursor.getString(5), cursor.getBlob(6));
+            MentalHealthItems obj = new MentalHealthItems(cursor.getInt(0), cursor.getInt(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getBlob(5));
+
+
 
             dataholder.add(obj);
         }
+
+
 
         MentalHealthActivityAdapter adapter = new MentalHealthActivityAdapter(dataholder);
         recyclerView.setAdapter(adapter);

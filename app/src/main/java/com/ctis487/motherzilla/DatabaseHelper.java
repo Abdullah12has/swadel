@@ -19,7 +19,7 @@ public class DatabaseHelper extends  SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String qry = "create table profiles (id integer primary key autoincrement, age integer, name text, description text, img blob)";
+        String qry = "create table if not exists profiles (id integer primary key autoincrement, age integer, name text, description text, speciality text, img blob)";
         sqLiteDatabase.execSQL(qry);
     }
 
@@ -36,6 +36,7 @@ public class DatabaseHelper extends  SQLiteOpenHelper {
         String qry="select * from profiles order by id desc";
 
         Cursor cursor = db.rawQuery(qry, null);
+
 
         return cursor;
 
