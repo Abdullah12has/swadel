@@ -30,6 +30,7 @@ public class DatabaseHelper extends  SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
+
     public Cursor readAllData(){
         SQLiteDatabase db = this.getWritableDatabase();
 
