@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "326596359688",
+    "project_id": "motherzilla-8f68b",
+    "storage_bucket": "motherzilla-8f68b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326596359688:android:bdbeaf4f30d16aeb5483bd",
+        "android_client_info": {
+          "package_name": "com.ctis487.motherzilla"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326596359688-5cr1i2a9igg3hdo5b66qk14kkb07kece.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ctis487.motherzilla",
+            "certificate_hash": "8c63015be4efd25deeee4b07417207459ee61fd5"
+          }
+        },
+        {
+          "client_id": "326596359688-ldj8bsp0jelfgd29n5nr0jdbl17cmusk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4tMIOZWnGcNqpj6lkdxI4Ccdp6r1BB0s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "326596359688-ldj8bsp0jelfgd29n5nr0jdbl17cmusk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
