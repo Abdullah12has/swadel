@@ -26,7 +26,6 @@ public class BottomFragment extends Fragment {
     public BottomFragment() {
         // Required empty public constructor
     }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +46,7 @@ public class BottomFragment extends Fragment {
 
         int pos = getArguments().getInt("position");
         System.out.println(pos);
-        System.out.println("SHIUABSIUAJBSIJKN");
+
         frgBottomImg.setImageResource(imgIds[pos]);
         frgBottomImg.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
@@ -59,11 +58,8 @@ public class BottomFragment extends Fragment {
         });
     }
 
-    //STEP 7
-    //Implenet changeCityImage(position) method,
-    // so that mainActivity can call it to chane the image according to postin value
-    //position value is sent from TopActivity to MainActivity
-    //then sent from MainActivity to BottomFragment
+
+
     void changeCityImage(int position){
         frgBottomImg.setImageResource(imgIds[position]);
         frgBottomImg.setOnClickListener(new View.OnClickListener() {

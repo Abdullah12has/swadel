@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeworkHelpActivity"
-    android:background="@drawable/background">
+    android:background="#BDCDC1"
+    tools:context=".BabyHelpActivity">
 
 
     <fragment
@@ -17,18 +17,19 @@
         android:layout_marginTop="36dp"
         android:layout_marginEnd="16dp"
 
-        android:layout_marginBottom="21dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/dynamicFragmentLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.714"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
         android:id="@+id/dynamicFragmentLayout"
-        android:layout_width="340dp"
-        android:layout_height="314dp"
+        android:layout_width="356dp"
+        android:layout_height="210dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="96dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -49,4 +50,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_navigation_menu"
         tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/edu"
+        android:layout_width="219dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="185dp"
+        android:layout_marginBottom="77dp"
+        android:text="Some Videos for Help"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/fragmentTop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.447"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

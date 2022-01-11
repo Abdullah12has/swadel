@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".HelpActivity">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -16,5 +17,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_navigation_menu"
         tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/mental_title"
+        android:layout_width="303dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="54dp"
+        android:fontFamily="casual"
+        android:text="Mental Health Resources"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+
+
+        android:textFontWeight="900"
+        android:textSize="25dp"
+        android:textStyle="italic|bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv1"
+        android:layout_width="342dp"
+        android:layout_height="570dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mental_title" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

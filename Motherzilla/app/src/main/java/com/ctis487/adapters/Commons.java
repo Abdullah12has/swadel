@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Commons {
     public static Quotes quote;
     public static ArrayList<Quotes> qdata;
-    public static int randomno;
+    public static ArrayList<Profile> pdata;
 
     public static Quotes getQuote() {
         return quote;
@@ -24,11 +24,11 @@ public class Commons {
         Commons.qdata = qdata;
     }
 
-    public static int getRandomno() {
-        return randomno;
+    public static ArrayList<Profile> getPdata() {
+        return pdata;
     }
 
-    public static void setRandomno(int randomno) {
-        Commons.randomno = randomno;
+    public static void setPdata(ArrayList<Profile> pdata) {
+        Commons.pdata = pdata;
     }
 }

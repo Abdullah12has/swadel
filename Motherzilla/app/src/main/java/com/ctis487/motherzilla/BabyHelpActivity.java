@@ -15,7 +15,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
-public class HomeworkHelpActivity extends AppCompatActivity implements  TopFragment.TopFragmentInterface{
+public class BabyHelpActivity extends AppCompatActivity implements  TopFragment.TopFragmentInterface{
 
 
 

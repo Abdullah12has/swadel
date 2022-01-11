@@ -39,7 +39,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnCancel"
+        android:id="@+id/bookButton"
         android:layout_width="288dp"
         android:layout_height="48dp"
         android:layout_marginStart="60dp"

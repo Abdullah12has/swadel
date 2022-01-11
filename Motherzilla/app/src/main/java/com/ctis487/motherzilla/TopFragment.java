@@ -17,9 +17,9 @@ import androidx.fragment.app.Fragment;
 
 public class TopFragment extends Fragment {
 
-    EditText frgTopEtName;
+
     Spinner frgTopSpinnerCity;
-    Button frgTopBtnOk;
+
     boolean isDefaultSelection=true;
 
     /*****************************************/
@@ -44,9 +44,7 @@ public class TopFragment extends Fragment {
         super.onAttach(context);
         if(context instanceof TopFragmentInterface )
             topFragmentInterfaceListener = (TopFragmentInterface) context;
-        // here, context is the MainActivity
-        // Assign context to TopFragmentInterfaceListener means that MainActivity implements that interface
-        // and changeImage() method is definietly implemented in MainActivity
+
     }
 
     /*****************************************/
@@ -77,11 +75,7 @@ public class TopFragment extends Fragment {
                     isDefaultSelection = false;
                 else{
                     String str = frgTopSpinnerCity.getSelectedItem().toString();
-                    Toast.makeText(getActivity(), str+" is selected from Top Fragement",Toast.LENGTH_SHORT).show();
-
-                    //STEP 8
-                    //When a city selected image of BottomFragment will be changed. So changeImage method implemented in MAinActivity will be called
-                    //Remember, topFragmentInterfaceListener points to the MainActivity
+//
                     topFragmentInterfaceListener.changeImage(position);
                 }
             }
@@ -91,6 +85,5 @@ public class TopFragment extends Fragment {
 
             }
         });
-        Toast.makeText(getActivity(), "Top Fragment loaded",Toast.LENGTH_SHORT).show();
     }
 }

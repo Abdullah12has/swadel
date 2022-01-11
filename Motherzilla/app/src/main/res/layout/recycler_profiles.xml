@@ -2,74 +2,63 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/recycler_constraintLayout"
+    android:id="@+id/recycler_personality"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="10dp"
-    android:background="@drawable/rounded_corner_gotitbtn"
-    android:orientation="vertical">
+    android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/imgResource"
-        android:layout_width="69dp"
-        android:layout_height="54dp"
+        android:id="@+id/imgprofile"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/tvAge"
-        android:layout_width="49dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="40dp"
-        android:background="#A39595"
-        android:text="Age"
-        app:layout_constraintBottom_toTopOf="@+id/tvPersonName"
-        app:layout_constraintStart_toEndOf="@+id/imgResource"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.638" />
-
-    <TextView
         android:id="@+id/tvPersonName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="#A39595"
+        android:layout_width="138dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="98dp"
         android:text="Name"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imgResource"
+        app:layout_constraintStart_toEndOf="@+id/imgprofile"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.763" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/tvPersonDescription"
-        android:layout_width="260dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="11dp"
-        android:background="#A39595"
-        android:text="Description"
+        android:id="@+id/tvAge"
+        android:layout_width="64dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Age"
+        app:layout_constraintBottom_toTopOf="@+id/tvSpecialty"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.772"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPersonName" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgprofile"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75" />
 
     <TextView
         android:id="@+id/tvSpecialty"
-        android:layout_width="80dp"
-        android:layout_height="24dp"
-        android:background="#A39595"
-        android:text="Specialty"
-        app:layout_constraintBottom_toTopOf="@+id/tvPersonName"
+        android:layout_width="158dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="16dp"
+        android:text="Speciality"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvAge"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.63" />
-
+        app:layout_constraintStart_toEndOf="@+id/imgprofile" />
 </androidx.constraintlayout.widget.ConstraintLayout>

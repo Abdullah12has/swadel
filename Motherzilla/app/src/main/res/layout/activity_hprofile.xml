@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HProfileActivity">
+
+    <TextView
+        android:id="@+id/specialitytv"
+        android:layout_width="222dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="117dp"
+        android:text="specialitytv"
+        android:textColor="#292323"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvnamehp" />
+
+    <TextView
+        android:id="@+id/tvnamehp"
+        android:layout_width="222dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="117dp"
+        android:text="Name"
+        android:textColor="#292323"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mm" />
+
+    <TextView
+        android:id="@+id/descriptiontv"
+        android:layout_width="269dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="117dp"
+        android:text="Descritpion"
+        android:textColor="#292323"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.021"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/specialitytv" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bookButton"
+        android:layout_width="277dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="73dp"
+
+        android:background="@drawable/rounded_corner_gotitbtn"
+        android:text="Book an Appointment!"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descriptiontv" />
+
+    <FrameLayout
+        android:id="@+id/mm"
+        android:layout_width="405dp"
+        android:layout_height="234dp"
+        android:background="@drawable/backgroundaaa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/img4"
+            android:layout_width="148dp"
+            android:layout_height="147dp"
+            android:layout_marginStart="122dp"
+            android:layout_marginTop="58dp"
+            android:layout_marginEnd="141dp"
+            android:contentDescription="TODO"
+            tools:srcCompat="@tools:sample/avatars" />
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

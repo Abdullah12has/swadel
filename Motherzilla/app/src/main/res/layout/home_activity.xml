@@ -28,12 +28,11 @@
         app:layout_constraintVertical_bias="0.833" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/search_btn2"
+        android:id="@+id/logout"
         android:layout_width="268dp"
         android:layout_height="39dp"
         android:background="@drawable/rounded_text_field_chat"
         android:fontFamily="monospace"
-        android:onClick="logOut"
         android:text="Logout?"
         android:textColor="#000000"
         android:textFontWeight="500"

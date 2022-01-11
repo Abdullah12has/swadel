@@ -12,7 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Motherzilla">
         <activity
-            android:name=".HomeworkHelpActivity"
+            android:name=".HProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BabyHelpActivity"
             android:exported="false" />
         <activity
             android:name=".HelpActivity"
