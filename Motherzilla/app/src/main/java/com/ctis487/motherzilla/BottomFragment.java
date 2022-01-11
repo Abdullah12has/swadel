@@ -1,5 +1,7 @@
 package com.ctis487.motherzilla;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,8 +18,11 @@ import java.util.ArrayList;
 public class BottomFragment extends Fragment {
 
     ImageView frgBottomImg;
-    int[] imgIds = new int[]{R.drawable.ankara, R.drawable.istanbul, R.drawable.izmir};
-
+    int[] imgIds = new int[]{ R.drawable.breathing,R.drawable.motherdiet, R.drawable.babydiet, R.drawable.diaper};
+    String[] youtubeLinks = new String[]{"https://www.youtube.com/watch?v=LCqxcKNImYw",
+                                        "https://www.youtube.com/watch?v=R9mYuYH1t8M",
+                                        "https://www.youtube.com/watch?v=Zu-0WnjRzA8",
+                                        "https://www.youtube.com/watch?v=QF6_xBd8oMY"};
     public BottomFragment() {
         // Required empty public constructor
     }
@@ -41,7 +46,17 @@ public class BottomFragment extends Fragment {
         frgBottomImg = view.findViewById(R.id.frgBottomImg);
 
         int pos = getArguments().getInt("position");
+        System.out.println(pos);
+        System.out.println("SHIUABSIUAJBSIJKN");
         frgBottomImg.setImageResource(imgIds[pos]);
+        frgBottomImg.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                Intent viewIntent =
+                        new Intent("android.intent.action.VIEW",
+                                Uri.parse(youtubeLinks[pos]));
+                startActivity(viewIntent);
+            }
+        });
     }
 
     //STEP 7
@@ -51,6 +66,14 @@ public class BottomFragment extends Fragment {
     //then sent from MainActivity to BottomFragment
     void changeCityImage(int position){
         frgBottomImg.setImageResource(imgIds[position]);
+        frgBottomImg.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                Intent viewIntent =
+                        new Intent("android.intent.action.VIEW",
+                                Uri.parse(youtubeLinks[position]));
+                startActivity(viewIntent);
+            }
+        });
     }
 
 }

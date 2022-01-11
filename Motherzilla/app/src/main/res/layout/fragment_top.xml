@@ -1,35 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TopFragment">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#DCEBCB"
         android:orientation="vertical">
-
-        <EditText
-            android:id="@+id/frgTopEtName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Name"
-            android:inputType="textPersonName" />
 
         <Spinner
             android:id="@+id/frgTopSpinnerCity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:entries="@array/cities" />
+            android:entries="@array/activities"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="32dp" />
 
-        <Button
-            android:id="@+id/frgTopBtnOk"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@android:string/ok" />
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

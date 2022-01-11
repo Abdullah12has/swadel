@@ -76,7 +76,7 @@ public class HomeworkHelpActivity extends AppCompatActivity implements  TopFragm
 
         bottomFragment = new BottomFragment();
         Bundle b = new Bundle();
-        b.putInt("position",2);
+        b.putInt("position",0);
 
         bottomFragment.setArguments(b);
 
