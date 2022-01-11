@@ -67,4 +67,13 @@ public class Quotes implements Parcelable {
     public void setQuoteAuthor(String quoteAuthor) {
         this.quoteAuthor = quoteAuthor;
     }
+
+    @Override
+    public String toString() {
+        return "Quotes{" +
+                "id=" + id +
+                ", quoteText='" + quoteText + '\'' +
+                ", quoteAuthor='" + quoteAuthor + '\'' +
+                '}';
+    }
 }
