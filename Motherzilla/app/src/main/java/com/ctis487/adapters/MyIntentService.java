@@ -29,8 +29,9 @@ public class MyIntentService extends IntentService {
 
     public MyIntentService() {
         super("MyIntentService");
-        Log.d("Service","Service Started LLLLLLLLLLLLLLLLLLLL");
+//        Log.d("Service","Service Started LLLLLLLLLLLLLLLLLLLL");
 
+        setIntentRedelivery(true);
     }
 
 
@@ -57,10 +58,14 @@ public class MyIntentService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
+
+//        System.out.println("111111111111111111111111");
+
         quotesList = new ArrayList<>();
         jsonStr = loadFileFromAssets("quotes.json");
 
         if (jsonStr != null) {
+//            System.out.println("22222222222222222222222");
             try {
                 jsonObject = new JSONObject(jsonStr);
                 qquotes = jsonObject.getJSONArray(TAG_QUOTES);
@@ -76,8 +81,10 @@ public class MyIntentService extends IntentService {
                 }
 
                 Intent broadcastIntent = new Intent();
-                broadcastIntent.setAction("JSON_PARSE_COMPLETED_ACTION");
+                broadcastIntent.setAction("JSON");
                 if(quotesList.size()>0) {
+//                    System.out.println("3333333333333333333333333333333");
+                    Commons.qdata = quotesList;
                     Bundle b=new Bundle();
                     b.putParcelableArrayList("quotes", quotesList);
                     broadcastIntent.putExtras(b);
@@ -86,6 +93,7 @@ public class MyIntentService extends IntentService {
                 }
                 else{
                     broadcastIntent.putExtra("result","NOTFOUND");
+//                    System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!");
                 }
                 sendBroadcast(broadcastIntent);
 

@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.ctis487.adapters.Commons;
 import com.ctis487.adapters.MyIntentService;
@@ -32,7 +33,6 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    Handler handler;
     FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
@@ -48,7 +48,7 @@ private String jsonStr;
 
     TextView quotetv, authortv;
     Button btn1;
-
+    IntentFilter filter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,11 +62,13 @@ private String jsonStr;
         quotetv = findViewById(R.id.tvQuote);
         authortv = findViewById(R.id.tvauthor);
 
-        //getting the quotes intent
-        IntentFilter filter = new IntentFilter();
-        filter.addAction("JSON_PARSE_COMPLETED_ACTION");
-        registerReceiver(mbroadcastreciver, filter);
+//        getting the quotes intent
+         filter = new IntentFilter();
 
+        filter.addAction("JSON");
+
+        registerReceiver(mbroadcastreciver, filter);
+        //end intent part
         BottomNavigationView navigationView = findViewById(R.id.bottom_navigation);
         navigationView.setSelectedItemId(R.id.page_5);
 
@@ -110,32 +112,27 @@ private String jsonStr;
             @Override
             public void onClick(View view) {
                 mAuth.signOut();
-//        Toast.makeText(MainActivity.this, "Logged out ", Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this, "Logged out ", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(MainActivity.this, LoginActivity.class));
             }
         });
 
 
 
-
-
     }
-
-
-//    public void logOut(MenuItem item) {
-//        mAuth.signOut();
-////        Toast.makeText(MainActivity.this, "Logged out ", Toast.LENGTH_SHORT).show();
-//        startActivity(new Intent(MainActivity.this, LoginActivity.class));
-//    }
 
     @Override
     protected void onStart() {
         super.onStart();
         FirebaseUser user = mAuth.getCurrentUser();
         mAuth.addAuthStateListener(mAuthListener);
+
+        Intent intent = new Intent(this, MyIntentService.class);
+        ContextCompat.startForegroundService(this, intent);
+        startService(intent);
+
                 if(user == null) {
-                    startActivity(new Intent(MainActivity.this, LoginActivity.class));  //activate this for redirect to login commented because not working on emulaotor
-//                    Toast.makeText(MainActivity.this, "User not found ", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
                 }
                 else{
                     Toast.makeText(MainActivity.this, "Login "+user.getEmail(), Toast.LENGTH_SHORT).show();
@@ -153,43 +150,27 @@ private String jsonStr;
 
 //    Getting data from json
     public void showw(View view) {
-        Intent intent = new Intent(this, MyIntentService.class);
-        startService(intent);
 
         Toast.makeText(MainActivity.this, "Intent service started ", Toast.LENGTH_SHORT).show();
         try{
-            final int random = new Random().nextInt(4999) + 0;
+            final int random = new Random().nextInt(60) + 0;
             Quotes quoteTemp = Commons.getQdata().get(random);
             quotetv.setText(quoteTemp.getQuoteText().toString());
             authortv.setText("—"+quoteTemp.getQuoteAuthor().toString());
+
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
 
     private BroadcastReceiver mbroadcastreciver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            String result = intent.getStringExtra("result");
-            if(result.contains("NOT")){
-                Toast.makeText(MainActivity.this, "ERROR JSON CANNOT BE PARSED",Toast.LENGTH_SHORT).show();
-            }
-            else {
+
                 Bundle b = intent.getExtras();
                 Commons.setQdata(b.getParcelableArrayList("quotes"));
                 Toast.makeText(MainActivity.this, "JSON PARSED",Toast.LENGTH_SHORT).show();
-            }
         }
     };
-
-
-
-
-
-
-
-
 
 }
