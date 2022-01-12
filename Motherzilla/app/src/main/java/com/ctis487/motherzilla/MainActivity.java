@@ -151,9 +151,9 @@ private String jsonStr;
 //    Getting data from json
     public void showw(View view) {
 
-        Toast.makeText(MainActivity.this, "Intent service started ", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(MainActivity.this, "Intent service started ", Toast.LENGTH_SHORT).show();
         try{
-            final int random = new Random().nextInt(60) + 0;
+            final int random = new Random().nextInt(47) + 0;
             Quotes quoteTemp = Commons.getQdata().get(random);
             quotetv.setText(quoteTemp.getQuoteText().toString());
             authortv.setText("—"+quoteTemp.getQuoteAuthor().toString());
@@ -169,7 +169,7 @@ private String jsonStr;
 
                 Bundle b = intent.getExtras();
                 Commons.setQdata(b.getParcelableArrayList("quotes"));
-                Toast.makeText(MainActivity.this, "JSON PARSED",Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MainActivity.this, "JSON PARSED",Toast.LENGTH_SHORT).show();
         }
     };
 
